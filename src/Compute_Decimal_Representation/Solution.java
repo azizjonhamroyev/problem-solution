@@ -8,6 +8,7 @@ class Solution {
         int multiply = 1;
         while (n > 0) {
             int i = n % 10;
+
             if (i != 0) {
                 stack.add(n % 10 * multiply);
             }
