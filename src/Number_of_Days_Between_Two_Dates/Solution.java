@@ -1,10 +1,16 @@
-package day_of_the_week;
+package Number_of_Days_Between_Two_Dates;
 
 class Solution {
-    public static final String[] weekDays = {"Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"};
     public static final int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    public String dayOfTheWeek(int day, int month, int year) {
+    public int daysBetweenDates(String date1, String date2) {
+        int year1 = Integer.parseInt(date1.substring(0, 4)), month1 = Integer.parseInt(date1.substring(5, 7)), day1 = Integer.parseInt(date1.substring(8)),
+                year2 = Integer.parseInt(date2.substring(0, 4)), month2 = Integer.parseInt(date2.substring(5, 7)), day2 = Integer.parseInt(date2.substring(8));
+
+        return Math.abs(dayCount(year1, month1, day1) - dayCount(year2, month2, day2));
+    }
+
+    public int dayCount(int year, int month, int day) {
         int defaultYear = 1971, defaultMonth = 1, defaultDay = 1, dayCount = 0;
 
         for (int i = defaultYear; i < year; i++) {
@@ -22,7 +28,7 @@ class Solution {
         }
 
         dayCount += day - defaultDay;
-        return weekDays[dayCount % 7];
+        return dayCount;
     }
 
     public boolean isLeapYear(int year) {
