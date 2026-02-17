@@ -2,6 +2,7 @@ package Majority_Frequency_Characters;
 
 class Solution {
     public String majorityFrequencyGroup(String s) {
+
         int[] counts = new int[26];
         for (char c : s.toCharArray()) {
             counts[c - 'a']++;
