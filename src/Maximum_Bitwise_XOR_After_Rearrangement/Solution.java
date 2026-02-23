@@ -10,6 +10,7 @@ class Solution {
             } else {
                 count0++;
             }
+
         }
 
         StringBuilder res = new StringBuilder();
