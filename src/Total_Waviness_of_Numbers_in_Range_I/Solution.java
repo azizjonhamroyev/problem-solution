@@ -11,7 +11,7 @@ class Solution {
         while (num > 0) {
             int i = num % 10;
             num /= 10;
-            if (!isM && pre > )
+//            if (!isM && pre > )
         }
         return false;
     }
